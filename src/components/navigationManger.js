@@ -3,6 +3,7 @@ import { createDrawerNavigator } from "@react-navigation/drawer";
 import DashboardComponent from "./dashboad";
 import ListAllProductsComponent from "./listAllProducts";
 import ViewProductComponent from "./viewProduct";
+import AddProduct from './addProduct';
 
 function NavigationManager() {
     const Drawer = createDrawerNavigator()
@@ -17,16 +18,23 @@ function NavigationManager() {
                 }
             }}
             headerMode='float'>
-            <Drawer.Screen
+            {/* <Drawer.Screen
                 name="Dashboard"
                 component={DashboardComponent}
-            />
+            /> */}
             <Drawer.Screen
                 name="ListAll"
                 component={ListAllProductsComponent}
             />
             <Drawer.Screen
-                name="ViewProduct"
+                name="AddProduct"
+                component={AddProduct}
+                options={{
+                    unmountOnBlur: true
+                }}
+            />
+            <Drawer.Screen
+                name="Recently ViewProduct"
                 component={ViewProductComponent}
             />
         </Drawer.Navigator>

@@ -45,27 +45,28 @@ function ListAllProductsComponent(props) {
                 <Appbar.Content title={searchValue === "" ? "All Products" : "Search Result"} />
                 {/* {searchEnabled ? <Searchbar style={styles.searchField} onChangeText={searchData} /> : null} */}
                 {/* {searchEnabled ? <Appbar.Action icon="cancel" onPress={toggleSearch} /> : <Appbar.Action icon="magnify" onPress={toggleSearch} />} */}
-                <Appbar.Action icon="logout" onPress={()=>{
+                <Appbar.Action icon="logout" onPress={() => {
                     console.log("logout should happen")
-                }}/>
+                }} />
             </Appbar.Header>
-            
+
             <Searchbar style={styles.searchField} onChangeText={searchData} placeholder="Search here!!!" />
             <ScrollView>
                 {
                     products.length !== 0 ?
                         products.map(data => {
                             let categoryName = store.categoryList.filter(e => e.id === parseInt(data.productCategory))
-                            console.log(categoryName);
                             data["productCategoryName"] = categoryName[0].categoryName
                             return (
                                 <List.Item
+                                    key={data.id}
                                     title={data.productName}
                                     description={"In-Stock: " + data.productStock + "\nPrice: " + parseFloat(data.productPrice)}
                                     onPress={() => {
-                                        props.navigation.navigate('ViewProduct', { product: data })
+                                        props.navigation.navigate('Recently ViewProduct', { product: data })
                                     }}
                                     left={props1 => <List.Icon {...props1} icon="cart" />}
+                                    // right={props2 => <List.Icon {...props2} color="red" icon="delete" />}
                                 />
                             )
                         }) : <Text>No products to display</Text>

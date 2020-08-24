@@ -6,6 +6,7 @@ const styles = StyleSheet.create({
         flex: 1,
         alignItems: "center",
         justifyContent: "center",
+        backgroundColor: "#1b1b1b"
     },
     textInputWidth: {
         width: "60%",
@@ -13,7 +14,9 @@ const styles = StyleSheet.create({
         borderColor: 'gray',
         borderWidth: 1,
         margin: 10,
-        padding: 5
+        padding: 5,
+        color: "white",
+        borderRadius: 7
     },
     appbar: {
         padding: 30,
@@ -37,6 +40,28 @@ const styles = StyleSheet.create({
     },
     backButton: {
         alignItems: "center",
+    },
+    addProductContainer:{
+        padding: 15
+    },
+    addProductField: {
+        width: "90%",
+        height: 40,
+        borderColor: 'gray',
+        borderWidth: 1,
+        margin: 10,
+        padding: 5,
+        color: "black",
+        borderRadius: 7
+    },
+    addProductButtonsContainer:{
+        display: "flex",
+        flexDirection: "row",
+        justifyContent: "space-evenly"
+    },
+    addProductButtons:{
+        width: 150,
+        color: "red"
     }
 })
 export default styles
