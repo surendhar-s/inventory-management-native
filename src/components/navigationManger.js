@@ -25,6 +25,9 @@ function NavigationManager() {
             <Drawer.Screen
                 name="ListAll"
                 component={ListAllProductsComponent}
+                options={{
+                    unmountOnBlur: true
+                }}
             />
             <Drawer.Screen
                 name="AddProduct"
@@ -36,6 +39,9 @@ function NavigationManager() {
             <Drawer.Screen
                 name="Recently ViewProduct"
                 component={ViewProductComponent}
+                options={{
+                    unmountOnBlur: true
+                }}
             />
         </Drawer.Navigator>
     )

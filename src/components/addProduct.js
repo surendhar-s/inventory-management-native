@@ -97,7 +97,7 @@ function AddProduct(props) {
                     <Text>
                         Product Description:
                 </Text>
-                    <TextInput style={styles.addProductField} multiline onChangeText={(e) => setDescription(e)} />
+                    <TextInput style={styles.addProductFieldDesc} multiline onChangeText={(e) => setDescription(e)} />
                     <HelperText type="error" visible={description == ""}>Provide valid description</HelperText>
                 </View>
                 <HelperText type="error" visible={error}>Please provide all values and try again!!!</HelperText>

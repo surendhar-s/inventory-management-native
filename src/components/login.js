@@ -48,7 +48,7 @@ function LoginComponent(props) {
                 title="Login"
                 onPress={doLoginProcess}
             />
-            {credentialError ? <Text>Please enter valid credential</Text> : null}
+            {credentialError ? <Text style={styles.errorText}>Please enter valid credential</Text> : null}
         </View>
         // </ImageBackground>
     )

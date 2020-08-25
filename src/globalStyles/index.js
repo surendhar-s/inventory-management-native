@@ -62,6 +62,19 @@ const styles = StyleSheet.create({
     addProductButtons:{
         width: 150,
         color: "red"
+    },
+    errorText: {
+        color: "red"
+    },
+    addProductFieldDesc:{
+        width: "90%",
+        // height: 40,
+        borderColor: 'gray',
+        borderWidth: 1,
+        margin: 10,
+        padding: 5,
+        color: "black",
+        borderRadius: 7
     }
 })
 export default styles

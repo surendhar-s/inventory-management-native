@@ -14,7 +14,7 @@ function ViewProductComponent(props) {
         Axios.delete("http://192.168.1.103:3001/products/" + id).then(res => {
             if (res.status === 200) {
                 dispatch(deleteProductFromStore(id))
-                props.navigation.navigate('ListAll')
+                props.navigation.navigate('ListAll', { deltedId: id })
             }
         })
     }
@@ -29,7 +29,7 @@ function ViewProductComponent(props) {
             </Appbar.Header>
             {product === null ?
                 <View>
-                    <Text>No products found!!</Text>
+                    <Text>Please select product from list!!</Text>
                     <View style={styles.backButton}>
                         <Button
                             title="Back"
@@ -59,7 +59,7 @@ function ViewProductComponent(props) {
                     <View style={styles.viewContainer}>
                         <Text style={styles.viewTextContainer}>Description:</Text><Text style={styles.viewTextContainer}>{product.productDescription}</Text>
                     </View>
-                    <View style={styles.backButton}>
+                    <View style={styles.addProductButtonsContainer}>
                         <Button
                             title="Delete"
                             onPress={() => deleteProduct()}
