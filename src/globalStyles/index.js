@@ -41,7 +41,7 @@ const styles = StyleSheet.create({
     backButton: {
         alignItems: "center",
     },
-    addProductContainer:{
+    addProductContainer: {
         padding: 15
     },
     addProductField: {
@@ -54,19 +54,20 @@ const styles = StyleSheet.create({
         color: "black",
         borderRadius: 7
     },
-    addProductButtonsContainer:{
+    addProductButtonsContainer: {
         display: "flex",
         flexDirection: "row",
-        justifyContent: "space-evenly"
+        justifyContent: "space-evenly",
+        // marginBottom: 100
     },
-    addProductButtons:{
+    addProductButtons: {
         width: 150,
         color: "red"
     },
     errorText: {
         color: "red"
     },
-    addProductFieldDesc:{
+    addProductFieldDesc: {
         width: "90%",
         // height: 40,
         borderColor: 'gray',
@@ -75,6 +76,9 @@ const styles = StyleSheet.create({
         padding: 5,
         color: "black",
         borderRadius: 7
+    },
+    footerMargin: {
+        marginBottom: 100
     }
 })
 export default styles

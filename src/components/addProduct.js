@@ -16,7 +16,10 @@ function AddProduct(props) {
     const [price, setPrice] = useState(null)
     const [quantity, setQuantity] = useState(null)
     const [description, setDescription] = useState(null)
+    const [subCategory, setSubCategory] = useState(null)
+    const [color, setColor] = useState(null)
     const [error, setError] = useState(false)
+    let subCategoryList = ["Shirts", "Polo's", "Tees", "Tracks", "Pants", "Jeans", "Sports wear"]
     useEffect(() => {
         setCategoryList(store.categoryList)
     }, [])
@@ -29,7 +32,9 @@ function AddProduct(props) {
             productDescription: description,
             productAddedOn: new Date(),
             productUpdatedOn: null,
-            productUserId: "1"
+            productUserId: "1",
+            productSubCategory: subCategory === null ? subCategoryList[0] : subCategory,
+            productColor: color
         }).then(res => {
             if (res.status === 201) {
                 let categoryName = categoryList.filter(e => parseInt(e.id) === parseInt(category))
@@ -45,8 +50,9 @@ function AddProduct(props) {
         if ((name !== null && name !== "") &&
             (price !== null && price !== "") &&
             (quantity !== null && quantity !== "") &&
-            (category !==null) &&
-            (description !== null && description !== "")) {
+            (description !== null && description !== "") &&
+            (color !== null && color !== "")
+        ) {
             setError(false)
             addProducts()
         }
@@ -55,7 +61,7 @@ function AddProduct(props) {
         }
     }
     return (
-        <View>
+        <View style={styles.footerMargin}>
             <Appbar.Header style={styles.appbar}>
                 <Appbar.Action icon="menu" onPress={() => props.navigation.toggleDrawer()} />
                 <Appbar.Content title="Add to inventory" />
@@ -81,7 +87,12 @@ function AddProduct(props) {
                     <TextInput style={styles.addProductField} keyboardType="numeric" onChangeText={(e) => setQuantity(e)} />
                     <HelperText type="error" visible={quantity == ""}>Provide valid quantity</HelperText>
                     <Text>
-                        Product Category:
+                        Product Color:
+                </Text>
+                    <TextInput style={styles.addProductField} onChangeText={(e) => setColor(e)} />
+                    <HelperText type="error" visible={color == ""}>Provide specify color</HelperText>
+                    <Text>
+                        Product Manufracturer:
                 </Text>
                     <Picker
                         selectedValue={category}
@@ -91,6 +102,20 @@ function AddProduct(props) {
                         {
                             categoryList.map(data => {
                                 return <Picker.Item key={data.id} label={data.categoryName} value={data.id} />
+                            })
+                        }
+                    </Picker>
+                    <Text>
+                        Product Category:
+                </Text>
+                    <Picker
+                        selectedValue={subCategory}
+                        style={{ height: 50, width: "auto" }}
+                        onValueChange={(itemValue, itemIndex) => setSubCategory(itemValue)}
+                    >
+                        {
+                            subCategoryList.map(data => {
+                                return <Picker.Item key={data} label={data} value={data} />
                             })
                         }
                     </Picker>

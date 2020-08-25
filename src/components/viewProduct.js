@@ -19,7 +19,7 @@ function ViewProductComponent(props) {
         })
     }
     return (
-        <View>
+        <View style={styles.footerMargin}>
             <Appbar.Header>
                 <Appbar.Action icon="menu" onPress={() => props.navigation.toggleDrawer()} />
                 <Appbar.Content title={product === null ? "Not found" : product.productName} />
@@ -42,7 +42,13 @@ function ViewProductComponent(props) {
                         <Text style={styles.viewTextContainer}>Name:</Text><Text style={styles.viewTextContainer}>{product.productName}</Text>
                     </View>
                     <View style={styles.viewContainer}>
+                        <Text style={styles.viewTextContainer}>Manufracturer:</Text><Text style={styles.viewTextContainer}>{product.productSubCategory}</Text>
+                    </View>
+                    <View style={styles.viewContainer}>
                         <Text style={styles.viewTextContainer}>Category:</Text><Text style={styles.viewTextContainer}>{product.productCategoryName}</Text>
+                    </View>
+                    <View style={styles.viewContainer}>
+                        <Text style={styles.viewTextContainer}>Color:</Text><Text style={styles.viewTextContainer}>{product.productColor}</Text>
                     </View>
                     <View style={styles.viewContainer}>
                         <Text style={styles.viewTextContainer}>Stock:</Text><Text style={styles.viewTextContainer}>{product.productStock}</Text>

@@ -27,7 +27,7 @@ function DashboardComponent(props) {
         return chartData
     }
     return (
-        <View>
+        <View style={styles.footerMargin}>
             <Appbar.Header style={styles.appbar}>
                 <Appbar.Action icon="menu" onPress={() => props.navigation.toggleDrawer()} />
                 <Appbar.Content title="Inventory Dashboard" />

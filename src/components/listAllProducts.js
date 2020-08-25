@@ -39,7 +39,7 @@ function ListAllProductsComponent(props) {
         }
     }
     return (
-        <View>
+        <View style={styles.footerMargin}>
             <Appbar.Header style={styles.appbar}>
                 <Appbar.Action icon="menu" onPress={() => props.navigation.toggleDrawer()} />
                 <Appbar.Content title={searchValue === "" ? "All Products" : "Search Result"} />
