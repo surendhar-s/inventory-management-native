@@ -24,7 +24,7 @@ function AddProduct(props) {
         setCategoryList(store.categoryList)
     }, [])
     const addProducts = () => {
-        Axios.post("http://192.168.1.103:3001/products", {
+        Axios.post("http://192.168.1.101:3001/products", {
             productCategory: category,
             productName: name,
             productStock: quantity,
@@ -74,7 +74,7 @@ function AddProduct(props) {
                     <Text >
                         Product Name:
                 </Text>
-                    <TextInput error style={styles.addProductField} onChangeText={(e) => setName(e)} />
+                    <TextInput style={styles.addProductField} onChangeText={(e) => setName(e)} />
                     <HelperText type="error" visible={name == ""}>Provide valid name</HelperText>
                     <Text>
                         Product Price (per unit):

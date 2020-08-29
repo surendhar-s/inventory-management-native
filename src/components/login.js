@@ -15,9 +15,9 @@ function LoginComponent(props) {
         if (userName !== "" && password !== "") {
             if (userName === "admin" && password === "admin") {
                 setCredentialError(false)
-                const list = await Axios.get("http://192.168.1.103:3001/products?productUserId=1")
+                const list = await Axios.get("http://192.168.1.101:3001/products?productUserId=1")
                 dispatch(InitialFetch(list.data))
-                const list2 = await Axios.get("http://192.168.1.103:3001/category")
+                const list2 = await Axios.get("http://192.168.1.101:3001/category")
                 dispatch(initialFetchCategory(list2.data))
                 props.isAttemptSuccessfull(true)
             }

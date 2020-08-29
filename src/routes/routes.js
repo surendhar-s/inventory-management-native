@@ -8,7 +8,7 @@ function MyNavigationContainer() {
     const [isValidUser, setIsValidUser] = useState(false)
     return (
         <NavigationContainer>
-            <View style={{ height: 60 }}></View>
+            <View style={{ height: 25 }}></View>
             {
                 !isValidUser ? <LoginComponent isAttemptSuccessfull={setIsValidUser} /> : <NavigationManger />
             }
