@@ -36,7 +36,7 @@ function EditProduct(props) {
     }
     const doEdit = () => {
         console.log(props.productDetails)
-        Axios.put("http://192.168.1.101:3001/products/" + props.productDetails.id, {
+        Axios.put("http://localhost:3001/products/" + props.productDetails.id, {
             productCategory: props.productDetails.productCategory,
             productName: name,
             productStock: quantity,

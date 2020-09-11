@@ -65,7 +65,6 @@ function DashboardComponent(props) {
                                 borderRadius: 16,
                             }}
                         />
-                        {/* <VictoryPie data={getChartData()} /> */}
                         <Text>Chart should render!!!</Text>
                     </View>
                     : <Text>No product found!!</Text>}

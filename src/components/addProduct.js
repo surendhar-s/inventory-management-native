@@ -24,7 +24,7 @@ function AddProduct(props) {
         setCategoryList(store.categoryList)
     }, [])
     const addProducts = () => {
-        Axios.post("http://192.168.1.101:3001/products", {
+        Axios.post("http://localhost:3001/products", {
             productCategory: category,
             productName: name,
             productStock: quantity,

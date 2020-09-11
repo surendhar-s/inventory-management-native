@@ -13,7 +13,7 @@ function ViewProductComponent(props) {
     const [isEditEnabled, setIsEditEnabled] = useState(false)
     const deleteProduct = () => {
         let id = product.id
-        Axios.delete("http://192.168.1.101:3001/products/" + id).then(res => {
+        Axios.delete("http://localhost:3001/products/" + id).then(res => {
             if (res.status === 200) {
                 dispatch(deleteProductFromStore(id))
                 props.navigation.navigate('ListAll', { deltedId: id })
