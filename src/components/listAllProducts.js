@@ -95,9 +95,9 @@ function ListAllProductsComponent(props) {
                 }} />
             </Appbar.Header>
             <Searchbar style={styles.searchField} onChangeText={searchData} placeholder="Search here!!!" />
+            <View style={styles.pickerContainer}>
             <Picker
                 selectedValue={filterBy}
-                style={{ height: 50, width: 100 }}
                 onValueChange={(itemValue, itemIndex) => filterData(itemValue)}
             >
                 <Picker.Item key={"all"} label="All category" value={"All-cat"} />
@@ -109,7 +109,7 @@ function ListAllProductsComponent(props) {
             </Picker>
             <Picker
                 selectedValue={sortBy}
-                style={{ height: 50, width: 100 }}
+                style={{ width: 117 }}
                 onValueChange={(itemValue, itemIndex) => sortData(itemValue)}
             >
                 <Picker.Item key={"nameA-Z"} label="Name A - Z" value="nameA-Z" />
@@ -118,6 +118,7 @@ function ListAllProductsComponent(props) {
                 <Picker.Item key={"quantityH-L"} label="Quantity high to low" value="quantityH-L" />
                 <Picker.Item key={"quantityL-W"} label="Quantity low to high" value="quantityL-H" />
             </Picker>
+            </View>
             <ScrollView style={{ marginBottom: 180 }}>
                 {
                     products.length !== 0 ?

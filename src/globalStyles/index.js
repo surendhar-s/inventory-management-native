@@ -79,6 +79,13 @@ const styles = StyleSheet.create({
     },
     footerMargin: {
         marginBottom: 100
+    },
+    pickerContainer: {
+        // margin: "auto",
+        // display: "inline-block"
+        flexDirection: "row",
+        flexWrap: "wrap",
+        justifyContent: "space-evenly"
     }
 })
 export default styles
